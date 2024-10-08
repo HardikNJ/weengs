@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "0a33645c-2359-45f4-abe6-e18eec0b3e76",
+		"name": "weeng",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25960714"
+	},
+	"item": [
+		{
+			"name": "Login Auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:3000/auth/login \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"username\": \"admin\",\r\n  \"password\": \"password\"\r\n}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Task By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <your-jwt-token>"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/tasks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <your-jwt-token>"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"New Task\",\n  \"description\": \"This is a new task\",\n  \"status\": \"pending\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <your-jwt-token>"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Updated Task\",\n  \"description\": \"Updated description\",\n  \"status\": \"completed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tasks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <your-jwt-token>"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/tasks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
